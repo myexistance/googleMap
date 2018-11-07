@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AIzaSyC5VOxWsEE7coBJUGZyoBuY_Q3oETQzegA
+</title>
+
+<style>
+	#map {
+		height: 100%;
+	}
+	html,body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	var map;
+	function initMap(){
+		map=new google.maps.Map(document.getElementById("map"),{
+			center: {lat: -41.2792, lng: 174.7803},
+			zoom: 20
+		});
+
+		marker = new google.maps.Marker({
+			position: {lat: -41.2792, lng: 174.7803},
+			map: map,
+			title: "Hello YooBee"
+		});
+		infowidow= new google.maps.InfoWindow({
+			content: "Wellington Stn lat: -41.2792, lng: 174.7803"
+		});
+		marker.addListener('click', function(){
+			infowidow.open(map, marker);
+		});
+
+
+	
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5VOxWsEE7coBJUGZyoBuY_Q3oETQzegA&callback=initMap"
+   async defer></script>
+
+</body>
+
+
+</html>
